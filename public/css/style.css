@@ -32,6 +32,12 @@ body {
 }
 .main-content {
   padding:1rem;
+  background: var(--navbar-bg-color) ;
+  height: 800px;
+}
+
+h1{
+  color: var(--navbar-color) ;
 }
 /* Navbar */
 .navbar {  
@@ -43,13 +49,13 @@ body {
   background:var(--navbar-bg-color);
   color:var(--navbar-color);
 }
-.navbar__links { 
+.navbar_links { 
   display:flex;  
 }
-.navbar__link { 
+.navbar_link { 
   padding:0 10px;
 }
-.navbar__link > a { 
+.navbar_link > a { 
   color:var(--navbar-color);
   text-decoration:none;
 }
@@ -57,9 +63,85 @@ body {
   display:none;
 }
 
+
+.ck_label{
+
+  display:inline-block;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  position: relative;
+  }
+  /* Cacher le bouton checkbox */
+  .btn_chb{
+  display:none;
+  }
+  /* mettre tous les éléments "span" frères du bouton checkbox en inline-block
+  pour pouvoir les aligner et changer leurs dimensions */
+  .btn_chb~span{
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+  color:white;
+  border-radius: 20px;
+  vertical-align: middle;
+  opacity: 0.7;
+  font-size: 1.5em;
+  line-height: 1.6;
+  font-weight: bold;
+
+  /* positionner tous les span par rapport à leurs parent "label" */
+  position: absolute;
+  top:0;
+  left:0;
+  }
+
+  /* Style initial du span Non*/
+  #snon{
+  background: #e74c3c;
+  text-align: right;
+  padding-right:5px;
+  transition: opacity 1s;
+  }
+  /* Style initial du span "OUI", avec "opacity=0" pour le rendre invisible*/
+  #soui{
+  background: #2ecc71;
+  text-align: left;
+  padding-left:5px;
+  opacity: 0;
+  transition : opacity 1s;
+  }
+
+  /* style du petit span rond */
+  #round{
+  width: 40px;
+  height: 40px;
+  top:auto;
+  border-radius: 100px;
+  background:white;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  opacity: 1;
+  transition: left 1s;
+  }
+
+  /* Checked */
+  .btn_chb:checked~#snon{
+      opacity:0 ;
+      transition: opacity 1s ;
+  }
+  .btn_chb:checked~#soui{
+
+      opacity:1;
+}
+
+  .btn_chb:checked~#round{
+left: 65%;
+
+}
+
 /*  Small device */
 @media screen and (max-width:767.98px) {
-  .navbar__links { 
+  .navbar_links { 
     overflow:hidden;
     display:flex;
     flex-direction:column;
@@ -72,27 +154,27 @@ body {
     transform: translateX(110%);
     transition: all .5s ease-in-out;
   }
-  .show-nav .navbar__links { 
+  .show-nav .navbar_links { 
     
     width:100vw;    
     transform: translateX(0);
   } 
-  .navbar__link {    
+  .navbar_link {    
     transform: translateX(101%);
     transition: all .5s ease-in-out;
   }
   
-  .show-nav .navbar__link  {        
+  .show-nav .navbar_link  {        
     transform: translateX(0);    
   }   
-  .navbar__link > a {
+  .navbar_link > a {
     display:block;
     padding:1rem;
     font-size:1.6rem;
     color:var(--navbar-color);  
     transition: all .4s ease-in-out;
   }
-  .navbar__link > a:hover {
+  .navbar_link > a:hover {
     padding-left:2rem;
     letter-spacing:5px;
   }
@@ -163,7 +245,7 @@ body {
 
 /*  Medium device - Bonus */
 @media screen and (min-width:768px) {
-  .navbar__link > a::after {
+  .navbar_link > a::after {
     display:block;
     content:"";
     width:0;
@@ -171,7 +253,7 @@ body {
     background:var(--navbar-color);
     transition:width .4s;
   }
-  .navbar__link:hover > a::after {
+  .navbar_link:hover > a::after {
     width:100%;
   }
 }
