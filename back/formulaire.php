@@ -1,9 +1,25 @@
+<?php
+require 'Projet.php';
+$projet=new Projet;
+$projet->getPdo();
+
+
+  // Connexion  
+
+  if (!isset($_SESSION['connecte'])) {
+    header("location: identification.php");
+    //   // echo "Identifiant ou mot de passe incorrect";
+  }
+ ?>
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
     <title>Ajout projet</title>
 </head>
 <body>
@@ -47,6 +63,15 @@
             
              </form>
 
-
+             
+ <?php
+if (!empty($_POST)) {
+    $newProjet=$project->setNom($_POST['title'])
+    ->setPrenom($_POST['description'])
+    ->setMail($_POST['date'])
+    ->setTelportable($_POST['url_site'])
+    ->setSexe($_POST['url_git']);
+}?>
+             
 </body>
 </html>
