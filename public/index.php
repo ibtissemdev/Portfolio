@@ -11,18 +11,18 @@
 
 
 <body>
-    <nav class="navbar light-mode  show-nav" role="navigation">
+    <nav class="navbar light mode show-nav" role="navigation">
         <div class="navbar_logo"><img src="logo.rond.png" alt="" width="40px"></div>
 
         <div class="switch">
-            <p class="mode-dark">Mode dark</p>
+            <p id="dark-mode">Mode dark</p>
             <label class="ck_label" id="ck_label">
                 <input type="checkbox" id="ch1" name="ch1" class="btn_chb" />
                 <span id="snon"></span>
                 <span id="soui"></span>
                 <span id="round"></span>
             </label>
-            <p class="light-mode">Mode light</p>
+            <p id="light-mode">Mode light</p>
         </div>
         <ul class="navbar_links">
             <li class="navbar_link first"><a href="#">Accueil</a> </li>
@@ -38,11 +38,16 @@
         </button>
     </nav>
 
-    <main class="main-content dark-mode" role="main">
-        <h1 class="light-mode">Mon site</h1>
+    <main class="main-content dark mode" role="main">
+        <h1 class="dark mode">Mes projets</h1>
+
+
+
+    
 
 
     </main>
+
     <script src="main.js"></script>
 </body>
 

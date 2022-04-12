@@ -3,12 +3,27 @@
 require 'Model.php';
 
 class Projet extends Model {
-
+    protected $Title;
     protected $Description;
-    protected $CreatedAt;
-    protected $Site;
-    protected $Git;
-    protected $table='projetcs';
+    protected $Created_at;
+    protected $Link_site;
+    protected $Link_git;
+    protected $Picture1;
+    protected $Picture2;
+    protected $Picture3;
+    protected $Picture4;
+    protected $Picture5;
+    protected $table='projects';
+
+    public function getTitle()
+    {
+        return $this->Title;
+    }
+    public function setTitle($Title)
+    {
+        $this->Title = $Title;
+        return $this;
+    }
    
     public function getDescription()
     {
@@ -20,37 +35,136 @@ class Projet extends Model {
         return $this;
     }
 
-    public function getCreatedAt()
+    public function getCreated_at()
     {
-        return $this->CreatedAt;
+        return $this->Created_at;
     }
-    public function setCreatedAt($CreatedAt)
+    public function setCreated_at($Created_at)
     {
-        $this->CreatedAt = $CreatedAt;
+        $this->Created_at = $Created_at;
         return $this;
     }
 
-    public function getSite()
+    public function getLink_site()
     {
-        return $this->Site;
+        return $this->Link_site;
     }
-    public function setSite($Site)
+    public function setLink_site($Link_site)
     {
-        $this->Site = $Site;
+        $this->Link_site = $Link_site;
         return $this;
     }
 
-    public function getGit()
+    public function getLink_git()
     {
-        return $this->Git;
+        return $this->Link_git;
     }
-    public function setGit($Git)
+    public function setLink_git($Link_git)
     {
-        $this->Git = $Git;
+        $this->Link_git = $Link_git;
         return $this;
     }
 
     
+    /**
+     * Get the value of Picture1
+     */ 
+    public function getPicture1()
+    {
+        return $this->Picture1;
+    }
+
+    /**
+     * Set the value of Picture1
+     *
+     * @return  self
+     */ 
+    public function setPicture1($Picture1)
+    {
+        $this->Picture1 = $Picture1;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Picture2
+     */ 
+    public function getPicture2()
+    {
+        return $this->Picture2;
+    }
+
+    /**
+     * Set the value of Picture2
+     *
+     * @return  self
+     */ 
+    public function setPicture2($Picture2)
+    {
+        $this->Picture2 = $Picture2;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Picture3
+     */ 
+    public function getPicture3()
+    {
+        return $this->Picture3;
+    }
+
+    /**
+     * Set the value of Picture3
+     *
+     * @return  self
+     */ 
+    public function setPicture3($Picture3)
+    {
+        $this->Picture3 = $Picture3;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Picture4
+     */ 
+    public function getPicture4()
+    {
+        return $this->Picture4;
+    }
+
+    /**
+     * Set the value of Picture4
+     *
+     * @return  self
+     */ 
+    public function setPicture4($Picture4)
+    {
+        $this->Picture4 = $Picture4;
+
+        return $this;
+    }
+
+     /**
+     * Get the value of Picture5
+     */ 
+    public function getPicture5()
+    {
+        return $this->Picture5;
+    }
+
+    /**
+     * Set the value of Picture5
+     *
+     * @return  self
+     */ 
+    public function setPicture5($Picture5)
+    {
+        $this->Picture5 = $Picture5;
+
+        return $this;
+    }
 }
 
 

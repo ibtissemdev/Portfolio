@@ -13,28 +13,35 @@ toggleMenu ();// On active notre fonction
 
 
 let round= document.getElementById("round");
-let light= document.getElementsByClassName('navbar');
-let dark= document.getElementsByClassName('main-content');
-/*let modedark=document.getElementsByClassName('mode-dark');
-let modelight= document.getElementsByClassName('mode-light');*/
+let modecolor= document.getElementsByClassName('mode');
+
+
+let modeDark=document.getElementById('dark-mode');
+let modeLight=document.getElementById('light-mode');
 
 function mode(mode1){
     for (valeur of mode1) {
         let lightMode=valeur.getAttribute("class");
         if (lightMode.indexOf("light") != -1  ) {
-            valeur.classList.replace('light-mode', 'dark-mode');
+            valeur.classList.replace('light', 'dark');
+
             
-          
-       
+                modeDark.style.visibility = "visible";
+                modeLight.style.visibility ="hidden"; 
+            
+   
         } else {
-            valeur.classList.replace('dark-mode', 'light-mode');
-           
+            valeur.classList.replace('dark', 'light');
+            
+        
+            modeDark.style.visibility='hidden'; 
+            modeLight.style.visibility = "visible";
         }
     }
 }
 
 
-    round.addEventListener('click', function() {mode(light); mode(dark)})
+    round.addEventListener('click', function() {mode(modecolor); mode(modeDark); mode(modeLight)})
      
 
 

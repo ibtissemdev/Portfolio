@@ -1,7 +1,7 @@
 <?php
 require 'Model.php';
 $conn=new Model;
-$conn->getPdo();
+//$conn->getPdo();
 
   if (!isset($_SESSION['connecte'])) {
     header("location: identification.php");

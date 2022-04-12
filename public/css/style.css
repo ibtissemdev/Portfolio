@@ -4,11 +4,11 @@
 :root {
   --font-size:1rem;
 }
-.light-mode {
+.light {
   --navbar-color: #222;
   --navbar-bg-color: #F0F0F0;  
 }
-.dark-mode {
+.dark {
   --navbar-color: #FFF;
   --navbar-bg-color: #000;  
 }
@@ -67,8 +67,8 @@ h1{
 .ck_label{
 
   display:inline-block;
-  width: 100px;
-  height: 40px;
+  width: 50px;
+  height: 20px;
   cursor: pointer;
   position: relative;
   }
@@ -80,8 +80,8 @@ h1{
   pour pouvoir les aligner et changer leurs dimensions */
   .btn_chb~span{
   display: inline-block;
-  width: 100px;
-  height: 40px;
+  width: 50px;
+  height: 20px;
   color:white;
   border-radius: 20px;
   vertical-align: middle;
@@ -114,8 +114,8 @@ h1{
 
   /* style du petit span rond */
   #round{
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   top:auto;
   border-radius: 100px;
   background:white;
@@ -137,6 +137,21 @@ h1{
   .btn_chb:checked~#round{
 left: 65%;
 
+}
+
+.switch {
+
+  display: flex;
+  flex-direction: row;
+ 
+}
+
+p#dark-mode {
+  margin-right : 20px;
+}
+
+p#light-mode {
+  margin-left : 20px;
 }
 
 /*  Small device */

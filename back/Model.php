@@ -1,23 +1,9 @@
 <?php
+require 'Bdd.php';
 
-class Model
+class Model extends Bdd
 {
-  protected $table;
-  protected $pdo;
-
-  public function __construct()
-  {
-    $this->pdo = new PDO('mysql:host=localhost;dbname=backoffice;charset=utf8', 'root', '', [
-      PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-      PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
-      session_start();
-  }
-
-  public function GetPdo() {
-
-    return $this->pdo;
-  }
- 
+   
   public function findAll()
   {
     
@@ -27,12 +13,30 @@ class Model
     return $resultat;
   }
 
-  public function find($id)
+  // public function find($id)
+  // {
+  //   $sth = $this->pdo->prepare("SELECT * From $this->table WHERE Id=$id");
+  //   $sth->execute();
+  //   $resultat = $sth->fetch(); //Afficher toutes les entrées (un tableau) dans le tableau
+  //   return $resultat;
+  // }
+
+  public function findBy(array $array)
   {
-    $sth = $this->pdo->prepare("SELECT * From $this->table WHERE Id=$id");
-    $sth->execute();
+    $keys=[];
+    $values=[];
+      
+    foreach ($array as $key => $value) {
+      if($value != null && $key!= 'table' && $key!='pdo') {
+      $keys[] = "$key=?";
+      $values[] = $value;
+    }
+    $keys = implode(" AND ", $keys);
+    $sth = $this->pdo->prepare("SELECT * From $this->table WHERE $keys");
+    $sth->execute($values);
     $resultat = $sth->fetch(); //Afficher toutes les entrées (un tableau) dans le tableau
     return $resultat;
+    }
   }
 
   public function delete($id)
@@ -41,6 +45,7 @@ class Model
     $sth->execute();
 
   }
+
 
   public function Insert(Model $data)
   {

@@ -1,8 +1,6 @@
 <?php
 require 'Projet.php';
 $projet=new Projet;
-$projet->getPdo();
-
 
   // Connexion  
 
@@ -23,7 +21,7 @@ $projet->getPdo();
     <title>Ajout projet</title>
 </head>
 <body>
-<form action='insertProject.php' method="post" enctype="multipart/form-data">
+<form action='' method="post" enctype="multipart/form-data">
          
                  <div class="">
                      <label for="Intitule">Nom du projet</label>
@@ -39,7 +37,7 @@ $projet->getPdo();
 
                 <label for="file">Photo</label>
                 <!-- <input type="file" name="Photo" id="Photo" required> -->
-                <input type = "file" accept = "image/jpg,image/jpeg,image/gif,image/png" name = "file" id = "file" multiple>
+                <input type = "file" accept = "image/jpg,image/jpeg,image/gif,image/png" name = "file[]" id = "file" multiple>
                 </div> 
                  <div class="">
                      <label for="created_at">Date du projet</label>
@@ -65,12 +63,43 @@ $projet->getPdo();
 
              
  <?php
+
+function upload () {
+    //Boucle qui permet d'uploader plusieurs images
+    //print_r($_FILES);
+    if(isset($_POST['envoyer'])){
+        $countfiles = count($_FILES['file']['name']);
+        for($i=0;$i<$countfiles;$i++){
+            $filename = $_FILES['file']['name'][$i];
+            $Picture[$i+1]=$filename;
+
+                move_uploaded_file($_FILES['file']['tmp_name'][$i],'images/'.$filename);}
+    }
+
+    // var_dump($this->nom[1]);
+    echo '<hr>';
+    //var_dump($nom);
+    echo '<hr>';
+}
 if (!empty($_POST)) {
-    $newProjet=$project->setNom($_POST['title'])
-    ->setPrenom($_POST['description'])
-    ->setMail($_POST['date'])
-    ->setTelportable($_POST['url_site'])
-    ->setSexe($_POST['url_git']);
+   // print_r($_POST);
+    print_r($_FILES['file']['name']);
+    $filename=$_FILES['file']['name']; 
+    $newProjet=$projet->setTitle($_POST['title'])
+    ->setDescription($_POST['description'])
+    ->setCreated_at($_POST['date'])
+    ->setLink_site($_POST['url_site'])
+    ->setLink_git($_POST['url_git'])
+    ->setPicture1($_FILES['file']['name'][0])
+    ->setPicture2($_FILES['file']['name'][1])
+    ->setPicture3($_FILES['file']['name'][2])
+    ->setPicture4($_FILES['file']['name'][3])
+    ->setPicture5($_FILES['file']['name'][4]);
+
+    upload($filename);
+    $projet->insert($newProjet);
+
+
 }?>
              
 </body>

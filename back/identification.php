@@ -20,7 +20,7 @@
       <div class="col-md-10">
 
         <label for="identifiant" class="form-label">Identifiant</label>
-        <input type="text" maxlength="20" pattern="^[A-Za-zéè '-]+$" class="form-control" name="Login" id="identifiant" placeholder="Entrer votre identifiant" required>
+        <input type="text" maxlength="20" pattern="^[A-Za-zéè '-]+$" class="form-control" name="Username" id="identifiant" placeholder="Entrer votre identifiant" required>
       </div>
 
       <div class="col-md-10">
@@ -51,7 +51,7 @@
 require 'Connexion.php';
 
  $conn= new Connexion;
- $conn->getPdo();
+
 
     if (isset($_POST['captcha'])) {
 
@@ -60,7 +60,7 @@ require 'Connexion.php';
         $_SESSION = array();
         if (isset($_POST['submit'])) {
 
-          $result=$conn->verif();
+          $result=$conn->findBy(["Username"=>$_POST["Username"]]);
   
           if (@$_POST["Password"] == $result['Password']) {
             $_SESSION['result'] = $result;
