@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -25,10 +25,10 @@
             <p id="light-mode">Mode light</p>
         </div>
         <ul class="navbar_links">
-            <li class="navbar_link first"><a href="#">Accueil</a> </li>
-            <li class="navbar_link second"><a href="#">Présentation</a> </li>
-            <li class="navbar_link third"><a href="#">Portfolio</a> </li>
-            <li class="navbar_link four "><a href="#">Contact</a> </li>
+            <li class="navbar_link first"><a href="index.php">Accueil</a> </li>
+            <li class="navbar_link second"><a href="#presentation">Présentation</a> </li>
+            <li class="navbar_link third"><a href="portfolio.php">Portfolio</a> </li>
+            <li class="navbar_link four "><a href="contact.php">Contact</a> </li>
 
         </ul>
 
@@ -38,17 +38,25 @@
         </button>
     </nav>
 
-    <main class="main-content dark mode" role="main">
+    <div class="main-content dark mode" role="main">
         <!--<h1 class="dark mode">Mes projets</h1>-->
 
         <div class="container">
-      <div class="image-wrapper left"></div>
-      <hr>
-      <h1 id="title">Développeuse Web</h1>
-      <div class="image-wrapper right"></div>
+            <div class="image-wrapper left dark mode"></div>
+            <hr>
+            <h1 class=" title dark mode" id="title">Développeuse Web</h1>
+            <div class="image-wrapper right dark mode"></div>
+        </div>
     </div>
+    <div class="presentation dark mode">
+        <h2 class="dark mode" id="presentation">Ma présentation</h2>
 
-    </main>
+        <p class=" dark mode">Je m'appelle Ibtissem, je suis en formation Développement Web et Web mobile à Onlineformapro depuis novembre 2021 pour un an.</p><br>
+
+        <p class=" dark mode">Avant cela, j'ai suivie la formation Compétence Numérique Fondamentale chez Simplon, vous pouvez avoir un aperçu de tous les modules que j'ai abordé en cliquant <a href="http://cnf3.simplon-chambery.com/apprenants/Ibtissem/projet/">ici</a> .</p>
+
+        <p class=" dark mode">Depuis que j'ai découvert le code dans ma précédente formation, j'ai décidé de devenir développeuse web. C'est un monde tellement vaste, des possibilités infinies, on en apprend tous les jours, d'ailleurs une fois sur mon code, je n'arrive plus à décrocher tant que je n'ai pas obtenu ce dont je voulais.</p>
+    </div>
 
     <script src="main.js"></script>
 </body>

@@ -67,3 +67,4 @@ function mode(mode1){
     
     setInterval(changeTitle, 3000);
     
+   

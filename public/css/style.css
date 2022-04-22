@@ -1,5 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('Luciole-Regular.ttf');
 
+html {
+scroll-behavior: smooth;
+
+}
 /* Variables */
 :root {
   --font-size:1rem;
@@ -24,23 +28,47 @@ ul {
   list-style:none;
 }
 
+
+
+
 /* Basic style */
 body {
   margin:0;
   font-size:var(--font-size);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Luciol', sans-serif;
+  scroll-behavior: smooth;
+
 }
+
+h2{
+  color:  var(--navbar-color) ;;
+  text-align: center;
+  line-height: 3em;
+}
+
+
 .main-content {
   
   background: var(--navbar-bg-color) ;
- 
+  height: 657px;
 }
 
-h1{
+
+
+.presentation {
+  display: flex;  
+  flex-direction:column ;
+  justify-content:space-around;
+  flex-wrap: wrap;
+  padding: 50px 100px;
+  background: var(--navbar-bg-color) ;
   color: var(--navbar-color) ;
+
 }
+
 /* Navbar */
 .navbar {  
+ 
   display:flex;
   align-items:center; 
   justify-content:space-between;   
@@ -48,7 +76,15 @@ h1{
   font-size:1.1rem;
   background:var(--navbar-bg-color);
   color:var(--navbar-color);
+  /* border-bottom: #000 solid 1px; */
+  position: sticky;
+  top: 0px;
+ 
+  z-index: 20;
+ box-shadow: inset rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+ 
 }
+
 .navbar_links { 
   display:flex;  
 }
@@ -168,18 +204,33 @@ p#light-mode {
   position: absolute;
 }
 
-.left {
+.dark.left {
+  background-image: url('../leftblack.png');
+  background-position: right;
+  z-index: 4;
+}
+
+.dark.right {
+  background-image: url('../rightblack.png');
+  background-position: left;
+  left: 50%;
+  z-index: 1;
+}
+
+.light.left {
   background-image: url('../left.png');
   background-position: right;
   z-index: 4;
 }
 
-.right {
-  background-image: url('../image1.png');
+.light.right {
+  background-image: url('../right.png');
   background-position: left;
   left: 50%;
   z-index: 1;
 }
+
+
 
 hr {
   height: 250px;
@@ -202,7 +253,7 @@ hr {
   margin-left: 2rem;
   transform: translate(-120%, -56%);
   animation: showTitle 3s infinite ;
-  background-color: rgb(255, 255, 128,.8);;
+  color:var(--navbar-color);
 }
 
 @keyframes showTitle {
