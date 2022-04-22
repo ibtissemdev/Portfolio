@@ -44,4 +44,26 @@ function mode(mode1){
     round.addEventListener('click', function() {mode(modecolor); mode(modeDark); mode(modeLight)})
      
 
-
+    let balise= document.getElementById('title');
+    //let title = balise.textContent;
+    
+    console.log(balise.textContent);
+    
+    function changeTitle() {
+       switch (balise.textContent) {
+            case 'Développeuse Web':
+                balise.innerText='motivée';
+            break;
+    
+            case 'motivée':
+                balise.innerText='impliquée et appliquée';
+            break;
+                
+            default : 
+                balise.innerText='Développeuse Web';  
+    
+       }}
+      
+    
+    setInterval(changeTitle, 3000);
+    

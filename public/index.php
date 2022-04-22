@@ -39,12 +39,14 @@
     </nav>
 
     <main class="main-content dark mode" role="main">
-        <h1 class="dark mode">Mes projets</h1>
+        <!--<h1 class="dark mode">Mes projets</h1>-->
 
-
-
-    
-
+        <div class="container">
+      <div class="image-wrapper left"></div>
+      <hr>
+      <h1 id="title">Développeuse Web</h1>
+      <div class="image-wrapper right"></div>
+    </div>
 
     </main>
 
