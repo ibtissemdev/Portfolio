@@ -99,7 +99,45 @@ h2{
   display:none;
 }
 
+.qualites {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 50px 100px;
+  background: #28282A;
+  color: #DADBDD;
 
+}
+
+.integre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.perseverante {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.positive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.qualites img {
+ width: 50px;
+
+}
+
+footer{
+
+  background-color:var(--navbar-color) ;
+  color: var(--navbar-bg-color) ;
+  text-align: center;
+  height: 30px;
+}
 .ck_label{
 
   display:inline-block;
@@ -242,6 +280,7 @@ hr {
   top: 50%;
   transform: translate(-48%, -48%)
 }
+
 
 #title {
   font-size: 2rem;
@@ -404,4 +443,15 @@ hr {
     width:100%;
   }
 }
+
+@keyframes tipsy {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotate(360deg);
+  }
+}
+
+
 

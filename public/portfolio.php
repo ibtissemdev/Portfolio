@@ -1,3 +1,9 @@
+<?php
+require '../back/Projet.php'; 
+$projet= new Projet;
+$resultat = $projet-> findAll();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -5,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../public/css/style.css" rel="stylesheet">
+  <!--  <link href="../public/css/style.css" rel="stylesheet"> -->
     <title>Accueil</title>
 </head>
 
@@ -39,7 +45,16 @@
     </nav>
 
     <main class="main-content dark mode" role="main">
-        <h1 class="dark mode">Mes projets</h1>-->
+        <h1 class="light mode">Mes projets</h1>-->
+
+        <?php 
+foreach ($resultat as $projet)
+echo '<pre>' , print_r($projet) , '</pre>' ; 
+
+
+        ?>
+
+
 
 
     </main>

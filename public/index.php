@@ -55,10 +55,37 @@
 
         <p class=" dark mode">Avant cela, j'ai suivie la formation Compétence Numérique Fondamentale chez Simplon, vous pouvez avoir un aperçu de tous les modules que j'ai abordé en cliquant <a href="http://cnf3.simplon-chambery.com/apprenants/Ibtissem/projet/">ici</a> .</p>
 
-        <p class=" dark mode">Depuis que j'ai découvert le code dans ma précédente formation, j'ai décidé de devenir développeuse web. C'est un monde tellement vaste, des possibilités infinies, on en apprend tous les jours, d'ailleurs une fois sur mon code, je n'arrive plus à décrocher tant que je n'ai pas obtenu ce dont je voulais.</p>
+        <p class=" dark mode">Depuis que j'ai découvert le code dans ma précédente formation, j'ai décidé de devenir développeuse web. C'est un monde tellement vaste, des possibilités infinies, on en apprend tous les jours. D'ailleurs une fois sur mon code, je n'arrive plus à décrocher tant que je n'ai pas obtenu ce dont je voulais.</p>
     </div>
 
+    <div class="qualites">
+
+        <div class="integre">
+        <img src="utilisateurs.png" alt="">
+            <h2>Intègre</h2>
+            <p>Cela me permet de me sentir à l'aise avec mes collègues, supérieurs et clients.</p>
+        </div>
+
+        <div class="perseverante">
+            <img src="verifier.png" alt="">
+            <h2>Persévérante</h2>
+            <p>Face à une difficulté, je ne flanche pas, je recherche la solution et vais au bout de mes objectifs.</p>
+        </div>
+
+        <div class="positive">
+            <img src="ajouter.png" alt="">
+            <h2>Positive attitude</h2>
+            <p>Je tire du bien de chaque situation, la positive attitude se transmet.</p>
+        </div>
+
+
+    </div>
+
+    <footer class="dark mode">
+        <p>Tous droits réservés - Ibtissem Khiri</p>
+    </footer>
     <script src="main.js"></script>
 </body>
 
 </html>
+
